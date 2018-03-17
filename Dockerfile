@@ -1,4 +1,4 @@
-FROM 192.168.20.233:5000/gnuradio
+FROM gnuradio:latest
 
 ENV PYTHONPATH /usr/local/lib/python2.7/site-packages/
 ENV LD_LIBRARY_PATH /usr/local/lib/
@@ -39,8 +39,21 @@ make && \
 make install && \
 ldconfig && \
 cd ../ && \
+mkdir /root/.grc_gnuradio && \
 cp examples/ieee802_15_4_oqpsk_phy.py /root/.grc_gnuradio/
 
 RUN git clone https://github.com/pieterbork/SUPERFREQ.git
+
+RUN pip install --upgrade pip && \
+pip install scapy
+
+RUN apt-get install mercurial && \
+hg clone https://bitbucket.org/secdev/scapy-com && \
+cd scapy-com && \
+python setup.py install 
+
+RUN git clone https://github.com/riverloopsec/killerbee.git && \
+cd killerbee && \
+python setup.py install
 
 CMD ["/bin/bash"]
