@@ -47,7 +47,7 @@ RUN git clone https://github.com/pieterbork/SUPERFREQ.git
 RUN pip install --upgrade pip && \
 pip install scapy
 
-RUN apt-get install mercurial && \
+RUN apt-get install -y python-gtk2 python-cairo python-usb python-crypto python-serial python-dev libgcrypt-dev mercurial && \
 hg clone https://bitbucket.org/secdev/scapy-com && \
 cd scapy-com && \
 python setup.py install 
