@@ -44,6 +44,8 @@ cd ../ && \
 mkdir /root/.grc_gnuradio && \
 cp examples/ieee802_15_4_oqpsk_phy.py /root/.grc_gnuradio/
 
+RUN apt-get install -y vim
+
 RUN pip install --upgrade pip && \
 pip install scapy
 
