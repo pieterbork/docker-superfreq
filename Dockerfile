@@ -1,4 +1,4 @@
-FROM gnuradio:latest
+FROM 192.168.20.233:5000/gnuradio:latest
 
 ENV PYTHONPATH /usr/local/lib/python2.7/site-packages/
 ENV LD_LIBRARY_PATH /usr/local/lib/
