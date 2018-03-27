@@ -12,9 +12,37 @@ First, we need to allow X server connections on our host machine, so install **x
 
     xhost +local:
 
-Now run the docker container, check /tmp for out_frames.csv
+Now run the docker container
 
-    sudo docker rm sf && sudo docker run --name sf -it --privileged -e DISPLAY=$DISPLAY -v /dev/bus/usb:/dev/bus/usb -v /tmp/.X11-unix:/tmp/.X11-unix superfreq bash
+    sudo docker run --name sf -it --privileged -e DISPLAY=$DISPLAY -v /dev/bus/usb:/dev/bus/usb -v /tmp/.X11-unix:/tmp/.X11-unix superfreq bash
+
+If it already exists, remove it and run again.
+
+    sudo docker rm sf
+
+Now you're ready to collect some data!
+
+Right now Wifi, Zigbee, and bluetooth scanning are implemented with various libraries.
+
+Wifi scanning can be attempted with 
+    
+    Carlos, what have you done?
+    python SUPERFREQ/src/hackrf/SDR_Testing/wifi_rx_rftap_nox.py
+
+Results will be in `/tmp/out_frames`
+
+Zigbee scanning with
+
+    Shame, Carlos, shame.
+    python SUPERFREQ/src/hackrf/SDR_Testing/SUPERFREQ/zigbee_rftap_nox.py
+
+Results will be in `/tmp/??`
+
+Bluetooth scanning with
+
+    timeout 10 btle_rx -o > bluetooth_out.txt
+
+Results will be in `bluetooth_out.txt`
 
 After you're finished, revert your X server permissions
 
