@@ -1,4 +1,4 @@
-FROM 192.168.20.233:5000/gnuradio:latest
+FROM gnuradio:latest
 
 ENV PYTHONPATH /usr/local/lib/python2.7/site-packages/
 ENV LD_LIBRARY_PATH /usr/local/lib/
@@ -47,7 +47,7 @@ cp examples/ieee802_15_4_oqpsk_phy.py /root/.grc_gnuradio/
 RUN apt-get install -y vim
 
 RUN pip install --upgrade pip && \
-pip install scapy
+pip install scapy flask flask_socketio
 
 RUN apt-get install -y python-gtk2 python-cairo python-usb python-crypto python-serial python-dev libgcrypt-dev mercurial && \
 hg clone https://bitbucket.org/secdev/scapy-com && \

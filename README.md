@@ -14,7 +14,7 @@ First, we need to allow X server connections on our host machine, so install **x
 
 Now run the docker container
 
-    sudo docker run --name sf -it --privileged -e DISPLAY=$DISPLAY -v /dev/bus/usb:/dev/bus/usb -v /tmp/.X11-unix:/tmp/.X11-unix superfreq bash
+    sudo docker run --name sf -it --privileged -p 80:5000 -e DISPLAY=$DISPLAY -v /dev/bus/usb:/dev/bus/usb -v /tmp/.X11-unix:/tmp/.X11-unix superfreq bash
 
 If it already exists, remove it and run again.
 
