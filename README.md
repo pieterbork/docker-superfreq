@@ -37,3 +37,7 @@ Now run the docker container with variables passed through
     sudo docker run --name sf -it --privileged -p 80:5000 -e DISPLAY=$DISPLAY -v /dev/bus/usb:/dev/bus/usb -v /tmp/.X11-unix:/tmp/.X11-unix superfreq bash
 
 You should now be able to `gnuradiocompanion file.grc` and get a display on your host machine!
+
+After you're finished, cleanup by disallowing connections
+
+    xhost - 
