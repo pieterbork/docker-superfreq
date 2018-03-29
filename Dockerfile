@@ -1,4 +1,4 @@
-FROM gnuradio:latest
+FROM pieterbork/gnuradio
 
 ENV PYTHONPATH /usr/local/lib/python2.7/site-packages/
 ENV LD_LIBRARY_PATH /usr/local/lib/
