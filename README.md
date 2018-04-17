@@ -1,4 +1,4 @@
-#
+<!---
 # SUPERFREQ docker container
 # Copyright (C) 2018 Team SUPERFREQ, CU Boulder ITP <itp@colorado.edu>
 # 
@@ -14,7 +14,7 @@
 # 
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
-#
+--->
 
 ## Building 
 
